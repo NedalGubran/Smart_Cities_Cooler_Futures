@@ -1,0 +1,7 @@
+data_raw/
+.DS_Store
+Notebooks/ARCHIVE/
+Notebooks/ARCHIVE/
+data_processed/ARCHIVE/
+data_processed/IMDC/
+data_processed/tableau/

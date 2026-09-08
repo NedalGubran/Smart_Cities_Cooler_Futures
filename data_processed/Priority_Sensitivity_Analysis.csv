@@ -1,0 +1,11 @@
+city,equal_rank,heat_focused_rank,exposure_focused_rank,cooling_focused_rank,best_rank,worst_rank,rank_range
+ATHINA,1,1,1,2,1,2,1
+MILANO,2,2,2,1,1,2,1
+MADRID,5,4,5,4,4,5,1
+PRAHA,9,8,9,9,8,9,1
+BERLIN,10,9,10,10,9,10,1
+AMSTERDAM,3,5,4,3,3,5,2
+WIEN,7,7,7,5,5,7,2
+LISBOA,8,10,8,8,8,10,2
+BARCELONA,4,6,3,6,3,6,3
+BUDAPEST,6,3,6,7,3,7,4
