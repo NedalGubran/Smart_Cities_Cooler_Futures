@@ -183,7 +183,7 @@ The database contains:
 -   954 hotspot-level records
 -   10 city-level summary records
 
-------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 # Tableau: Final Visualisation Focus
 

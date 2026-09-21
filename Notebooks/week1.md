@@ -164,7 +164,7 @@ The next stage of the project will focus on:
 - Identifying the main factors behind those differences
 - Preparing the first analytical results
 
----
+----
 
 ## Week 1 Summary
 

@@ -117,7 +117,7 @@ The project could therefore begin to answer:
 - **WHY?** Which factors contribute to that priority?
 - **WHAT NEXT?** What additional analysis is needed to support the recommendations?
 
----
+----
 
 ## 7. Next Steps
 

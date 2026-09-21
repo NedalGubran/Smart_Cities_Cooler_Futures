@@ -186,7 +186,7 @@ The recommendations are based on transparent hotspot characteristics and are inf
 
 They should be interpreted as decision-support rules rather than causal prescriptions.
 
-------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 ## 7. SQL Analysis
 
