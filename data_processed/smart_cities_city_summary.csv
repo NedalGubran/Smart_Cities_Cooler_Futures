@@ -1,0 +1,11 @@
+city,hotspot_blocks,hotspot_share_pct,hotspot_population,population_exposed_pct,main_recommendation,blocks_with_main_recommendation
+Amsterdam,94,12.841530054644808,1616346.0,54.716567243301874,Targeted local cooling measures,47
+Athina,24,4.651162790697675,264816.0,7.86085698943212,Cooling measures in dense built-up areas,8
+Barcelona,87,12.305516265912306,2925716.0,60.25959453261017,Increase green space,29
+Berlin,204,8.629441624365482,3170534.0,62.36494460879965,Increase green space,64
+Budapest,52,3.051643192488263,338123.0,10.990630158109987,Increase green space,27
+Lisboa,49,4.279475982532751,274426.0,9.768243331509673,Expand street trees and shade,31
+Madrid,64,3.0534351145038165,211942.0,3.096506987821407,Increase green space,35
+Milano,130,15.348288075560804,2632508.0,53.52144632908037,Increase green space,89
+Praha,108,6.918641896220372,701810.0,29.833659948733427,Increase green space,65
+Wien,142,5.6709265175718855,207140.0,6.693844048363459,Increase green space,109

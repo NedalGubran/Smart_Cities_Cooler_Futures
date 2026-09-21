@@ -1,0 +1,7 @@
+factor,effect,unit,significance
+Green Space,-0.61,per +10 percentage points,p < 0.001
+Water,-0.77,per +10 percentage points,p < 0.001
+Built-up Share,0.12,per +10 percentage points,p = 0.001
+Street Trees,-0.1,per +10 percentage points,p < 0.001
+Mean Building Height,0.1,per +1 metre,p < 0.001
+Building Density,0.0,No independent association,p = 0.94
