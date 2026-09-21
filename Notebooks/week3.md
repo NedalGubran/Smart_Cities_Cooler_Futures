@@ -1,234 +1,253 @@
 # Smart Cities, Cooler Futures
 
 ## Week 3 Check-in
+
 ### A Data-Driven Framework for Urban Cooling Prioritisation
 
----
+------------------------------------------------------------------------
 
 ## 1. The Urban Heat Challenge
 
-Urban heat does not affect all cities in the same way.
+Urban heat is not distributed equally within or across cities.
 
-A city may experience high temperatures, but cooling priority also depends on population exposure, urban form and the availability of green infrastructure.
+Local surface temperature can vary with vegetation, water, built-up
+land, building characteristics and other urban conditions. At the same
+time, the importance of a hot area increases when many people are
+exposed.
 
 The project therefore asks:
 
-> **Where should cities act first to reduce urban heat vulnerability, and what type of cooling intervention should they prioritise?**
+> **Which urban factors are associated with higher surface heat, where
+> should cooling interventions be prioritised, and what actions are
+> supported by the evidence?**
 
-The analysis compares **10 European cities**.
+The analysis covers 10 European Functional Urban Areas (FUAs).
 
----
+------------------------------------------------------------------------
 
 ## 2. What Did We Analyse?
 
-To compare the cities, I analysed six indicators across four main dimensions:
+The analysis combines local Land Surface Temperature (LST) with
+environmental, built-environment and population variables.
 
-| Dimension | Indicator |
-|---|---|
-| **Heat** | UHI Intensity |
-| **Exposure** | Population Density |
-| **Urban Form** | Building Density + Building Height |
-| **Cooling Capacity** | Green Space + Street Trees |
+  -----------------------------------------------------------------------
+  Dimension                           Variables
+  ----------------------------------- -----------------------------------
+  **Heat**                            Land Surface Temperature
 
-These dimensions represent different parts of urban heat vulnerability.
+  **Cooling Environment**             Green-space share, Water share,
+                                      Street-tree layer share
 
-> **Urban cooling priority is not determined by temperature alone. It depends on the combination of Heat + Exposure + Urban Form + Cooling Capacity.**
+  **Built Environment**               Built-up share, Building density,
+                                      Mean building height
 
----
+  **Human Exposure**                  Local population
+  -----------------------------------------------------------------------
+
+UHI data is retained as contextual information, while local LST is used
+as the main heat outcome for statistical testing.
+
+------------------------------------------------------------------------
 
 ## 3. How Did the Analysis Develop?
 
-The analysis was developed step by step.
+### Step 1: Build the Spatial Evidence Base
 
-### Step 1 — Measure Urban Heat Vulnerability
+LST observations were extracted within the 10 FUA boundaries and
+combined with local urban and environmental characteristics.
 
-The six indicators were analysed for all 10 cities.
+Approximately 62,000 local LST cells were prepared.
 
-**Heat + Exposure + Urban Form + Cooling Capacity**
+### Step 2: Reduce Spatial Pseudoreplication
 
-↓
+Neighbouring observations are not fully independent.
 
-### Step 2 — Calculate the Priority Score
+The local cells were therefore aggregated into approximately 14,000
+spatial blocks of roughly 2 km for the inferential analysis.
 
-Because the indicators use different units, they were normalised to a common **0–1 risk scale**.
+### Step 3: Define and Test Hypotheses
 
-They were then combined using equal weights to create one comparable **Urban Cooling Priority Score** for each city.
+The analysis was restructured around testable hypotheses.
 
-**6 Indicators → Normalisation → Priority Score → Ranking**
+For each factor:
 
-↓
+-   H0 assumes no association with LST.
+-   H1 proposes an association with LST.
 
-### Step 3 — Explain the Ranking
+Spearman correlations were used for exploratory association testing.
 
-The ranking tells us **where** cooling action should be prioritised, but not **why**.
+### Step 4: Build a Multivariable Model
 
-Therefore, Driver Analysis was used to identify the main factors behind each city's priority.
+A multivariable OLS regression was used to examine the independent
+association of several factors with LST while controlling for baseline
+differences between cities.
 
-↓
+The model includes:
 
-### Step 4 — Strengthen the Analysis
+-   Green-space share
+-   Water share
+-   Built-up share
+-   Street-tree layer share
+-   Local population
+-   Building density
+-   Mean building height
+-   City fixed effects
 
-The Priority Score and ranking alone were not enough to support urban cooling decisions.
+HC3 robust standard errors were used.
 
-Additional analytical layers were therefore added:
+### Step 5: Identify Priority Hotspots
 
-- **LST 2021–2024** → to analyse recent summer surface heat
-- **Sensitivity Analysis** → to test whether the ranking remains stable under different weighting scenarios
-- **Impervious-Surface Change 2021–2024** → to provide recent urban-development context
-- **Intervention Gap Analysis** → to identify Green-Space and Street-Tree gaps
+After testing the factors, the analysis moved from explanation to
+decision support.
 
-↓
+A hotspot is a spatial block that is simultaneously:
 
-### Step 5 — From Evidence to Action
+-   in the top 25% of LST within its city, and
+-   in the top 25% of population within its city.
 
-The different analytical results were brought together to support city-specific cooling recommendations.
+This identifies areas where high heat and high human exposure coincide.
 
-**Priority + Drivers + Additional Analysis → Cooling Recommendation**
+### Step 6: From Evidence to Action
 
----
+Local hotspot characteristics were then used to assign transparent
+cooling intervention categories.
 
-### Analysis Workflow
+------------------------------------------------------------------------
 
-**6 Urban Indicators**  
-↓  
-**Priority Score**  
-↓  
-**City Ranking**  
-↓  
-**Drivers + LST + Sensitivity + Intervention Gaps**  
-↓  
-**City-Specific Cooling Recommendations**
+## 4. What Did the Statistical Analysis Show?
 
----
+The final multivariable model used 12,291 spatial blocks and achieved an
+R² of approximately 0.83, including city fixed effects.
 
-## 4. What Did the Priority Score Show?
+Key model results:
 
-The final ranking identified:
+  Factor                                       Estimated Association with LST    p-value
+  ------------------------------------------ -------------------------------- ----------
+  Green space, +10 percentage points                                  -0.61°C   \< 0.001
+  Water, +10 percentage points                                        -0.77°C   \< 0.001
+  Built-up land, +10 percentage points                                +0.12°C      0.001
+  Street-tree layer, +10 percentage points                            -0.10°C   \< 0.001
+  Mean building height, +1 m                                          +0.10°C   \< 0.001
+  Building density, +100 buildings/km²                      approximately 0°C       0.94
 
-1. **Athens — 0.700**
-2. **Milan — 0.689**
-3. **Amsterdam — 0.588**
+The results provide evidence that green space and water are associated
+with lower LST, while built-up share and mean building height are
+associated with higher LST in the fitted model.
 
-### Priority Ranking
+Building density does not show evidence of an independent association
+after controlling for the other variables.
 
-![alt text](urban_cooling_priority_ranking.png)
+These are statistical associations, not causal effects.
 
-The important result is that these cities do not rank highly for the same reason.
+------------------------------------------------------------------------
 
-Athens and Milan emerge as the highest cooling priorities, followed by Amsterdam.
+## 5. Where Do Heat and Population Exposure Coincide?
 
-For example:
+The hotspot analysis identified **954 local hotspot blocks** across the
+10 study areas.
 
-- **Athens** → UHI Intensity + Population Density
-- **Milan** → Green-Space Deficit + UHI Intensity
-- **Amsterdam** → Building Density + Green-Space Deficit
+Hotspots are not defined by comparing cities against one another. Each
+block is evaluated relative to the heat and population distributions
+within its own city.
 
-> **Different cities can have high cooling priority for different reasons.**
+Compared with non-hotspot blocks, hotspot areas show:
 
----
+-   Higher average LST
+-   Lower average green-space share
+-   Higher average built-up share
+-   Much higher local population
+-   Higher average building height
 
-## 5. What Did the Additional Analysis Show?
+This provides a local decision-support layer rather than a city ranking.
 
-The additional Week 3 analysis helped test and explain the Priority Score.
-
-### Summer Heat
-
-Satellite Land Surface Temperature data were analysed for summer **2021–2024**.
-
-- **Madrid** has the highest four-year mean summer LST: **43.03°C**
-- **Athens** follows with **40.47°C**
-- **9 of 10 cities** recorded higher summer LST in 2024 than in 2021
-
-An important finding was:
-
-> **Madrid is the hottest city based on mean LST, but it ranks fifth in the overall Priority Score.**
-
-This confirms that temperature alone does not determine overall cooling priority.
-
-### Robustness
-
-Different weighting scenarios were tested to check whether the Priority Ranking changes.
-
-**Athens and Milan remain first or second across all scenarios.**
-
-Budapest is more sensitive and moves between **rank 3 and rank 7**.
-
-This means that the highest priorities are relatively stable, while some mid-ranked cities depend more on the planning perspective.
-
-### Recent Urban Change
-
-Impervious-surface change from **2021–2024** was also analysed.
-
-The relationship between impervious-surface increase and LST change was very weak:
-
-**r = -0.139**
-
-Therefore, recent impervious change is used as supporting context rather than as part of the Priority Score.
-
----
+------------------------------------------------------------------------
 
 ## 6. From Analysis to Action
 
-The final analytical step was to identify **Green-Space and Street-Tree Intervention Gaps**.
+Five intervention categories were assigned to hotspot blocks:
 
-This helps connect the analytical evidence with practical cooling actions.
+| Recommended Intervention | Hotspot Blocks |
+|---|---:|
+| Increase green space | 477 |
+| Expand street trees and shade | 208 |
+| Targeted local cooling measures | 142 |
+| Cooling measures in dense built-up areas | 117 |
+| Add water features | 10 |
 
-| City | Main Evidence | Recommended Action |
-|---|---|---|
-| **Athens** | Heat + Population Exposure | Targeted cooling & shade |
-| **Milan** | Heat + Green-Space Gap | Expand green infrastructure |
-| **Amsterdam** | Building Density + Green-Space Gap | Expand green infrastructure |
-| **Madrid** | Street-Tree Gap + Heat | Expand street-tree coverage |
-| **Vienna** | Green + Tree Gaps | Expand green infrastructure & trees |
-| **Budapest** | Green-Space Gap + Heat | Green infrastructure & targeted cooling |
+The recommendation rules are applied in order using local hotspot characteristics:
 
-The analysis therefore moves from:
+- Low green space → Increase green space
+- Low street-tree coverage → Expand street trees and shade
+- High built-up share and no water → Cooling measures in dense built-up areas
+- No water after previous conditions → Add water features
+- Other hotspot conditions → Targeted local cooling measures
 
-**Which city should act first?**
+The recommendations are based on transparent hotspot characteristics and are informed by the statistical evidence.
 
-to:
+They should be interpreted as decision-support rules rather than causal prescriptions.
 
-**Why is the city a priority, and what type of cooling action is appropriate?**
+------------------------------------------------------------------------
 
----
+## 7. SQL Analysis
 
-## 7. Week 3 Outcome
+The final analytical outputs were transferred to PostgreSQL.
 
-The framework can now answer:
+Two main tables were created:
 
-**WHERE?** → Priority Score
+-   `smart_cities_hotspots`
+-   `smart_cities_city_summary`
 
-**WHY?** → Driver Analysis
+SQL was used to:
 
-**IS HEAT CHANGING?** → LST 2021–2024
+-   Validate imported datasets
+-   Summarise hotspots by city
+-   Analyse hotspot characteristics
+-   Calculate intervention distributions
+-   Join hotspot-level and city-level outputs
+-   Create analytical summaries using GROUP BY, window functions, JOINs
+    and CTEs
 
-**HOW ROBUST?** → Sensitivity Analysis
+The final database contains 954 hotspot records and 10 city-level
+summary records.
 
-**WHAT CHANGED?** → Impervious-Surface Change
+------------------------------------------------------------------------
 
-**WHAT SHOULD CITIES DO?** → Intervention Gap + Recommendation
+## 8. Week 3 Outcome
 
-The final analytical results were also transferred to **PostgreSQL** and validated using SQL queries.
+The analytical framework can now answer:
 
----
+-   **WHAT?** Which available urban factors are associated with LST?
+-   **WHERE?** Where do high heat and high population exposure coincide?
+-   **WHO?** How much population is located within the identified
+    hotspot areas?
+-   **WHAT ACTION?** Which local cooling intervention category fits the
+    hotspot characteristics?
 
-## 8. Key Conclusion
+The project has therefore moved from descriptive city comparison to a
+hypothesis-driven spatial analysis supported by statistical evidence.
 
-> **Urban cooling priority is not simply a question of which city is hottest.**
+------------------------------------------------------------------------
 
-The analysis shows that cooling priority depends on the combination of:
+## 9. Key Conclusion
 
-**Heat + Exposure + Urban Form + Cooling Capacity**
+> **Urban cooling decisions should not be based only on which city is
+> hottest.**
 
-Athens and Milan remain robust high-priority cities, but the reasons behind vulnerability differ between cities.
+The analysis shows that local heat patterns are associated with several
+urban and environmental characteristics, while population data
+identifies where high heat also represents high human exposure.
 
-Therefore, the results support a **city-specific approach to urban cooling rather than one solution for all cities.**
+The resulting framework connects:
 
----
+**Statistical Evidence → Local Hotspots → Population Exposure → Cooling
+Action**
 
-## 9. Next Steps
+------------------------------------------------------------------------
 
-- **GitHub** — organise and document the final project workflow
-- **Tableau** — build the final decision-support visualisation
-- **Streamlit** — develop the interactive application
-- **Final Presentation** — communicate and practise the final analytical story
+## 10. Next Steps
+
+-   **Tableau**: Build the final evidence and decision-support
+    visualisations
+-   **GitHub**: Organise and document the final project workflow
+-   **Final Presentation**: Reduce, simplify and communicate the
+    analytical story within 10 to 15 minutes
